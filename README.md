@@ -117,6 +117,7 @@ this, or want a credit added/changed/removed? Open a PR or an issue.
 - [tim-peters/WLED-Midi-Keyboard](https://github.com/tim-peters/WLED-Midi-Keyboard) — single-HTML-on-device MIDI keyboard; its zero-install deployment is the ideal we're aiming a `strip` implementation at.
 - [onlaj/Piano-LED-Visualizer](https://github.com/onlaj/Piano-LED-Visualizer) — the reference Raspberry-Pi + WS2812 piano visualizer (learning / Synthesia).
 - [MusicalBasics — How To Make Your Own LED Piano](https://www.youtube.com/watch?v=B-lzFz1RM4E) — a full build that drives the LEDs from Ableton.
+- [Piano Led](https://www.facebook.com/pianoled/reels/) (Lille, FR) — a piano-LED visualiser shown in short video reels: the strip lights the notes as you play. Another take on the same *note → LED position* the `strip` mode targets.
 - Synthesia LED guides and the various *Instructables* piano-LED tutorials.
 
 **Kindred products** (the same instinct, done as closed hardware): DAW-driven recording lamps like the [Punchlight Recording Lamp USB RGB](https://www.thomannmusic.com/punchlight_recording_lamp_usb_rgb.htm) — which turns a light red / green straight from your DAW's record state — show the appetite for *DAW → light*. wled-midi is the open, WLED version of exactly that: a record-arm note/CC → a lamp goes red.
