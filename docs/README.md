@@ -4,6 +4,9 @@ Topic map for the [wled-midi convention](../README.md). The **normative spec is 
 atomic file** ([SPEC.md](../SPEC.md)) — one source of truth, no cross-file drift; this index
 segments the docs **by topic** and points into it. Hardware and tooling live on their own pages.
 
+**New here?** Start with the **[Quick reference](quick-reference.md)** — WLED in 60 seconds and
+the whole MIDI map in one page (a fast on-ramp for tool builders, e.g. Bome).
+
 ## Protocol — in [SPEC.md](../SPEC.md)
 
 - [One unified syntax](../SPEC.md) — channel 1 = plain-MIDI floor (universal); channels 2–16 declared per use via **MPE zones**; every "mode" is a configuration of one syntax.

@@ -84,6 +84,9 @@ scripting layer for LEDs — we lean on that one.
 
 ## Documentation
 
+New here? The **[Quick reference](docs/quick-reference.md)** explains WLED in 60 seconds and
+puts the whole MIDI map on one page — a fast on-ramp for tool builders (e.g. Bome).
+
 Topic-segmented docs live in **[`docs/`](docs/README.md)** — protocol map (into [SPEC.md](SPEC.md)),
 plus hardware guides: [piano-aligned LED strip](docs/hardware/piano-strip.md) and
 [WLED lamp(s)](docs/hardware/lamp.md).
