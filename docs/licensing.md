@@ -164,6 +164,33 @@ So the likely shape: **permissive + §14 for the convention; a considered choice
 EUPL) for the reference impls; GPL only where a dependency forces it.** We'll settle it with the WLED
 community's input.
 
+## Proposed direction — a leaning (final call still pending WLED feedback)
+
+The instinct: **copyleft fits the project's spirit** (keep improvements open, as WLED does) — *but*
+without scaring off makers who need a **closed part to survive**, and without adopting anything that
+would restrict legitimate exploitation, **including commercial / closed** use. The reconciliation is a
+**layered, best-of-both-worlds** setup:
+
+- **The convention** ([wled-midi](https://github.com/openlamp/wled-midi)) → stays **permissive (MIT) +
+  [§14](../SPEC.md)**. A *standard* must be implementable by **everyone, including fully closed
+  products** — copyleft here would defeat its purpose.
+- **The reference implementations** (engine, web, matrix, bome, midi, live) → **MPL-2.0** (Mozilla
+  Public License 2.0), the textbook *best of both worlds*:
+  - **Weak / file-level copyleft** → improvements *to our files* stay open (the copyleft spirit, aligned
+    with WLED's openness).
+  - **Closed-friendly** → a company can embed or wrap the code in a **closed, commercial product**; only
+    direct modifications to the MPL files come back. Nobody who needs a closed layer is shut out.
+  - **Explicit patent grant + retaliation**, and **compatible with GPL / Apache / EUPL** if code mixes.
+- **Respect WLED's EUPL where WLED code is actually involved** — a contribution to WLED itself (a
+  usermod) is EUPL, as required. But **we do not migrate our repos to EUPL**: we incorporate no WLED
+  source (we speak over the network), so it isn't required, and MPL gives the same weak-copyleft benefit
+  without EUPL's narrower familiarity or EU-specific framing — and **without restricting closed
+  exploitation** the way full copyleft would.
+
+Net effect: the code stays open and improvements flow back (copyleft), yet **closed and commercial use
+stays fully possible** (MPL around the impls, MIT for the standard). Best of both worlds; WLED's spirit
+respected; nobody excluded. **We'll confirm with the WLED community before flipping any licence.**
+
 ## Practicalities (for when we do decide)
 
 - Relicensing our own code is clean: it's Benoît's code (with Claude as co-author), so there are no
