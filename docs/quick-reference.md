@@ -9,10 +9,10 @@ A one-page primer for anyone new to this convention — including tool builders 
 
 ## What is WLED? (the 60-second version)
 
-[**WLED**](https://kno.wled.ge) is popular open-source firmware for **addressable LED**
-strips and bulbs (running on cheap ESP32/ESP8266 boards). Once flashed, a WLED device joins
-your Wi-Fi and exposes a **local HTTP JSON API** — you control it by POSTing a small JSON
-"state" object to `http://<device-ip>/json/state`. No cloud, 100 % local.
+[**WLED**](https://kno.wled.ge) is open-source firmware for **addressable LED** strips and
+bulbs (running on ESP32/ESP8266 boards). Once flashed, a WLED device joins your Wi-Fi and
+exposes a **local HTTP JSON API** — you control it by POSTing a small JSON "state" object to
+`http://<device-ip>/json/state`. No cloud, 100 % local.
 
 This convention is just an agreed **MIDI → that JSON** mapping. Every Core mapping resolves to
 one documented WLED JSON key — so it works against a **stock WLED device, no extra software**.
@@ -99,13 +99,14 @@ the *transforms* (how a value becomes a WLED number) are the stable contract.
 
 ---
 
-## For the Bome team specifically
+## Reading this from the Bome side
 
-Bome MIDI Translator is the **universal adapter**: it takes whatever MIDI a controller sends
-and **re-labels it** into the messages above, then routes it to the virtual port a wled-midi
-implementation listens on. So the only thing Bome needs to *emit* is the raw MIDI on the
-outgoing side — here it is in hex (channel 1 = all lamps; change the channel nibble to target a
-group):
+[Bome MIDI Translator Pro](https://www.bome.com/products/miditranslator) (an independent
+product — not affiliated with this project) is a natural fit as a **general-purpose adapter**:
+it takes whatever MIDI a controller sends and **re-labels it** into the messages above, then
+routes it to the virtual port a wled-midi implementation listens on. The only thing to *emit*
+is the raw MIDI on the outgoing side — here it is in hex (channel 1 = all lamps; change the
+channel nibble to target a group):
 
 | Action | Outgoing MIDI (hex) |
 |---|---|
@@ -115,10 +116,10 @@ group):
 | **CC** bri/cct/hue/sat/fx/sx/ix/pal (CC 1–8) | `B0 01 pp` … `B0 08 pp` (`pp` = value pass-through) |
 | **Program Change** → preset | `C0 pp` |
 
-A ready-made, no-code translator pack (one translator per action, capture-your-controller on
-the incoming side) lives in **[openlamp/bome](https://github.com/openlamp/bome)** — paste the
+A no-code translator pack (one translator per action, capture-your-controller on the incoming
+side) is available at **[openlamp/bome](https://github.com/openlamp/bome)** — paste the
 [`wled-midi.generic.txt`](https://github.com/openlamp/bome/blob/main/wled-midi.generic.txt)
-blocks into a Bome preset and capture your buttons. Bome is also the natural home for
+blocks into a Bome preset and capture your buttons. The same tool can also carry
 **return-feedback** logic (WLED state → light up the controller's own LEDs).
 
 ---
