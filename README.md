@@ -5,10 +5,6 @@
 > music. Notes → colours, CC → brightness/effects, Program Change → presets, MIDI
 > Clock (or a session clock) → on-the-beat. 100 % local.
 
-> Using [Bome MIDI Translator](https://www.bome.com/products/miditranslator)? →
-> **[Bome](https://github.com/openlamp/bome)** — a no-code starter pack (paste-in translators)
-> plus a WLED primer written from Bome's point of view.
-
 This repo is **just the specification** — no runtime, no dependencies. It exists so
 that multiple tools can speak the same MIDI↔WLED language instead of each inventing
 its own.
@@ -161,7 +157,7 @@ member of the family: one MIDI event → one WLED action, live, rather than a pr
 
 - [**Trevliga Spel — Stream Deck MIDI plugin**](https://trevligaspel.se/streamdeck/midi/index.php) ([Elgato Marketplace](https://marketplace.elgato.com/product/midi-b068a591-1a69-48fe-9206-b2d24762228b)) — a rock-solid Stream Deck MIDI plugin (Windows/macOS, MIDI 1.0) with a genuinely great **scripting DSL**. A daily-driver for controlling MIDI gear, and one of the easiest ways to fire wled-midi notes/CC from hardware **on cue, with no code** (see [Scripting LED sequences](#scripting-led-sequences)).
 
-- [**Bome MIDI Translator Pro**](https://www.bome.com/products/miditranslator) — a general-purpose MIDI mapper / router / scripter, and the **universal adapter**: translate *any* input (a controller sending the "wrong" notes/CC, keystrokes, timers, DAW MIDI) into wled-midi, **and integrate the MIDI flows between devices** — merge, split and route between hardware, virtual ports and DAWs. Also a natural home for value-level **return-feedback** logic.
+- [**Bome MIDI Translator Pro**](https://www.bome.com/products/miditranslator) — a general-purpose MIDI mapper / router / scripter, and the **universal adapter**: translate *any* input (a controller sending the "wrong" notes/CC, keystrokes, timers, DAW MIDI) into wled-midi, **and integrate the MIDI flows between devices** — merge, split and route between hardware, virtual ports and DAWs. Also a natural home for value-level **return-feedback** logic. No-code **[starter pack → openlamp/bome](https://github.com/openlamp/bome)** (paste-in translators + a WLED primer from Bome's point of view).
 
 **Tooling to build & test an implementation:**
 
