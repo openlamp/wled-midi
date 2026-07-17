@@ -42,6 +42,21 @@ intelligence in the firmware/host so any dense strip becomes MIDI-compatible:
 - **LEDs-per-key** derived from *LEDs-per-octave* + an offset (which note is LED 0), **or**
 - the user **measures** the keyboard width + white-key count and the firmware computes the map.
 
+### The formula (what `keymap` uses)
+
+Two numbers calibrate a whole strip — no per-key table needed:
+
+```
+lpk       = strip_LED_count / number_of_keys_the_strip_covers   (LEDs per key)
+firstnote = the MIDI note sitting at LED 0 (e.g. 21 = piano A0, 36 = a 61-key C)
+led(note) = round((note − firstnote) × lpk)                     (light led(note) … +ceil(lpk))
+```
+
+Examples: a **144 LED/m** strip over an **88-key** piano (~1.23 m ≈ 176 LEDs) → `lpk ≈ 176/88 = 2.0`,
+`firstnote = 21`. A **61-key** (C2–C7) controller with a 100-LED strip → `lpk ≈ 100/61 ≈ 1.6`,
+`firstnote = 36`. These are exactly the `strip.lpk` / `strip.firstnote` config keys in the
+[engine](https://github.com/openlamp/engine) and [wled-midi-web](https://github.com/openlamp/wled-midi-web).
+
 Each key lights ~2–3 LEDs (density > keys). Velocity → brightness, note-off → fade (see
 [`strip` mode](../../SPEC.md)).
 
