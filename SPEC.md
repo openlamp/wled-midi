@@ -1,6 +1,6 @@
 # WLED-MIDI — a convention for controlling WLED over MIDI
 
-**Version 0.6.2** · status: draft · license: MIT
+**Version 0.6.3** · status: draft · license: MIT · patent policy: royalty-free, non-assertion (§14)
 
 A small, open convention that maps standard MIDI messages to
 [WLED](https://kno.wled.ge) actions, so any DAW, sequencer or hardware MIDI
@@ -391,3 +391,29 @@ calibration changes.
 (drives the LEDs from Ableton), [onlaj/Piano-LED-Visualizer](https://github.com/onlaj/Piano-LED-Visualizer)
 (reference Raspberry-Pi + WS2812 visualizer), [tim-peters/WLED-Midi-Keyboard](https://github.com/tim-peters/WLED-Midi-Keyboard),
 Synthesia LED guides.
+
+---
+
+## 14. Patent & openness policy
+
+This convention is meant to stay **free for everyone to implement** — in open-source and commercial
+products alike. Two commitments make that durable:
+
+**Defensive publication.** This specification is published openly and in dated form (this
+repository's public history, from July 2026) as **prior art**. Once published, the mappings and
+mechanisms it describes cannot be newly patented by anyone — *including the authors*. The convention
+stays in the commons by design.
+
+**Royalty-free, non-assertion.** The authors make **no patent claim** over this convention and
+commit, on a **royalty-free, irrevocable, non-assertion** basis, **not to assert** any patent they
+may hold against anyone who implements it. No permission, no licence fee, and no registration is
+required to build on it. (This mirrors the royalty-free patent policy that keeps open web standards
+adoptable by all.)
+
+**Scope.** This covers *this convention* — the MIDI↔WLED mappings and the modes defined here. It does
+**not** grant rights over third parties' patents (see the prior-art note in
+[docs/hardware/piano-strip.md](docs/hardware/piano-strip.md)), and it is **not legal advice**: anyone
+shipping a commercial product should still obtain their own freedom-to-operate opinion.
+
+Code is licensed [MIT](LICENSE); this policy governs the *specification and its ideas*. Together they
+keep the project's guiding line real — **advanced, integrated solutions usable by everyone**.

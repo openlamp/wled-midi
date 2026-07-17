@@ -3,6 +3,13 @@
 All notable changes to the WLED-MIDI convention. This spec is versioned
 independently; implementers pin a version.
 
+## 0.6.3 — 2026-07-17
+
+- **Patent & openness policy (§14)** — makes the convention durably free for everyone to implement:
+  a **defensive-publication** statement (this dated public spec is prior art, unpatentable by anyone
+  incl. the authors) + a **royalty-free, irrevocable non-assertion** pledge (the authors won't assert
+  any patent against implementers), mirroring open web-standard patent policy. Not legal advice.
+
 ## 0.6.2 — 2026-07-16
 
 - **`strip` gains a fourth position function `zone`** — hold notes to light the LED **range**
