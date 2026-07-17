@@ -112,14 +112,35 @@ this, or want a credit added/changed/removed? Open a PR or an issue.
 - [Simple DMX/MIDI control for venue](https://wled.discourse.group/t/simple-dmx-midi-control-for-venue/12068) — *zumdar* — brightness on a controller.
 - [WLED + MIDI Player?](https://wled.discourse.group/t/wled-midi-player/4536) — *wombat* — the earliest "can I?" (2021).
 
-**Projects & tutorials** (prior art for the `strip` / piano-guide space):
+**Projects & tutorials** (prior art for the `strip` space):
 
-- [tim-peters/WLED-Midi-Keyboard](https://github.com/tim-peters/WLED-Midi-Keyboard) — single-HTML-on-device MIDI keyboard; its zero-install deployment is the ideal we're aiming a `strip` implementation at.
-- [onlaj/Piano-LED-Visualizer](https://github.com/onlaj/Piano-LED-Visualizer) — the reference Raspberry-Pi + WS2812 piano visualizer (learning / Synthesia).
+- [tim-peters/WLED-Midi-Keyboard](https://github.com/tim-peters/WLED-Midi-Keyboard) — a single-HTML-on-device MIDI keyboard: play a strip like an instrument. Its zero-install deployment is the ideal we aim a `strip` implementation at.
+
+### Piano-learning tools — and why we build an open protocol alongside them
+
+A whole family of projects and products *light the keys to teach you to play*. Some are polished
+learning tools with a real business model behind them — and staying viable can reasonably mean
+relying on a **proprietary or closed protocol**. That work is genuine and **we respect it**: making
+something people love and can sustain is hard, and a closed interface is a legitimate way to
+protect it.
+
+- [onlaj/Piano-LED-Visualizer](https://github.com/onlaj/Piano-LED-Visualizer) — the reference open-source RPi + WS2812 piano visualiser (learning / Synthesia).
+- [serifpersia/pianolux-esp32](https://github.com/serifpersia/pianolux-esp32) & [pianolux-arduino](https://github.com/serifpersia/pianolux-arduino) — piano-LED from USB / BLE / WiFi MIDI on cheap ESP hardware.
 - [MusicalBasics — How To Make Your Own LED Piano](https://www.youtube.com/watch?v=B-lzFz1RM4E) — a full build that drives the LEDs from Ableton.
-- [Piano Led](https://www.facebook.com/pianoled/reels/) (Lille, FR) — a piano-LED visualiser shown in short video reels: the strip lights the notes as you play. Another take on the same *note → LED position* the `strip` mode targets.
-- [serifpersia/pianolux-esp32](https://github.com/serifpersia/pianolux-esp32) & [pianolux-arduino](https://github.com/serifpersia/pianolux-arduino) — an active piano-LED visualiser lighting a WS2812 strip from USB / BLE / WiFi MIDI (ESP32 + a Java host) — a close cousin of the `strip` piano-guide on cheap ESP hardware.
+- [Piano Led](https://www.facebook.com/pianoled/reels/) (Lille, FR) — a piano-LED visualiser shown in short video reels: the strip lights the notes as you play.
 - Synthesia LED guides and the various *Instructables* piano-LED tutorials.
+
+wled-midi runs **in parallel**, with a complementary aim: an **open, standardised, collaborative**
+convention, so that any tool — a learning app, a DIY strip, a stage rig, a hardware controller —
+can speak the same MIDI↔WLED language and interoperate. We're not here to displace anyone, and
+we'll do our best that **each finds its place**: where a product's model needs a closed protocol,
+that stays theirs; where a use is more community-minded — education, DIY, sharing, freely mixing
+tools — **open interoperability has a great deal to offer**, because it's what lets solutions become
+usable by *everyone*, not only inside one vendor's walls.
+
+That is the project's guiding line: **advanced, integrated solutions that anyone can use, across
+varied contexts** — from a beginner's first lit key to a full live show — kept open so the whole
+community can build on them, together.
 
 **Software that already drives WLED** (the neighbourhood wled-midi joins — these mostly stream
 *pixels* over WLED's realtime UDP: DDP / Art-Net / E1.31. wled-midi is the **MIDI-native, per-message**
