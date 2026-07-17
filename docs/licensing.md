@@ -1,5 +1,13 @@
 # Licensing — an open question, deliberately not settled yet
 
+> **Preamble — reconcile everyone, nothing fixed in advance.** The aim of this project is to **bring all
+> the actors together**, not to pick a camp: the WLED community and its open ethos; the makers and
+> companies who need a **closed part to make a living**; the DIY, education and hobby world that thrives
+> on **interoperability**; and the tool authors who build the bridges between them. The licence question
+> is approached **in that spirit, with no predetermined answer** — nothing on this page is a settled
+> position. It's an open reflection, meant to be weighed *together* and adjusted as the project and its
+> community grow. The goal, as everywhere in the project, is that **each finds its place**.
+
 > **Status: undecided, on purpose.** The code currently ships under [MIT](../LICENSE), and the
 > *specification* is covered by the royalty-free non-assertion policy in [SPEC §14](../SPEC.md).
 > Whether the **code** stays MIT or moves to another licence is an **open decision we are holding
