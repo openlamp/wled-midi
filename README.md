@@ -9,6 +9,13 @@ This repo is **just the specification** — no runtime, no dependencies. It exis
 that multiple tools can speak the same MIDI↔WLED language instead of each inventing
 its own.
 
+> 🚧 **Status — a project just getting started, built in the open.** wled-midi is young and
+> **structuring itself progressively**: the convention is still a **draft** (see [SPEC.md](SPEC.md))
+> and squarely in a **build phase**. It's meant to be **co-constructed** — shaped together with
+> anyone who wants to take part (WLED users, tool makers, controller and firmware authors). Expect
+> it to move and sharpen over time; ideas, corrections and contributions are welcome via an
+> [issue](https://github.com/openlamp/wled-midi/issues) or a PR.
+
 ## Why a convention
 
 WLED already exposes a clean [JSON state API](https://kno.wled.ge/interfaces/json-api/).
