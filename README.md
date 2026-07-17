@@ -159,6 +159,10 @@ member of the family: one MIDI event → one WLED action, live, rather than a pr
 - [**Chataigne**](https://github.com/benkuper/Chataigne) (Win/Mac/Linux) — Ben Kuper's modular **glue** (MIDI/OSC/DMX/Art-Net/sACN); a natural host to *implement* wled-midi as a bridge.
 - [**Hyperion.ng**](https://github.com/hyperion-project/hyperion.ng) (Win/Mac/Linux) — ambient/bias lighting → WLED. And WLED's own canonical list: [compatible software](https://kno.wled.ge/basics/compatible-software/).
 
+**Apps & products built on WLED** (finished tools you can just use):
+
+- [**LumiDeck**](https://github.com/openlamp/lumideck-support) — a **Stream Deck** app that drives your WLED lamps & strips locally from physical keys: colour, brightness, effects/palettes by name, scenes, and beat-sync (~45 ms/press). From the OpenLamp author, built on the [engine](https://github.com/openlamp/engine); WLED-first.
+
 **Kindred products** (the same instinct, done as closed hardware): DAW-driven recording lamps like the [Punchlight Recording Lamp USB RGB](https://www.thomannmusic.com/punchlight_recording_lamp_usb_rgb.htm) — which turns a light red / green straight from your DAW's record state — show the appetite for *DAW → light*. wled-midi is the open, WLED version of exactly that: a record-arm note/CC → a lamp goes red.
 
 **Expressive controllers & MPE sources** (what the `strip` / `mpe` modes are made for): [ROLI Seaboard](https://roli.com) (the flagship MPE controller — also switches single-channel MIDI ↔ MPE, which inspired the unified channel/zone design), [Expressive E Touché](https://www.expressivee.com), the [TEControl USB-MIDI Breath Controller (BBC2)](https://www.tecontrol.se) (breath + bite expression), [Beatbars](https://www.beatbars.com) (MIDI expression pedals/bars for organists), and MPE-capable instruments like [Spectrasonics Omnisphere](https://www.spectrasonics.net/products/omnisphere/).
