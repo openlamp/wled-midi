@@ -12,9 +12,10 @@ its own.
 > 🚧 **Status — a project just getting started, built in the open.** wled-midi is young and
 > **structuring itself progressively**: the convention is still a **draft** (see [SPEC.md](SPEC.md))
 > and squarely in a **build phase**. It's meant to be **co-constructed** — shaped together with
-> anyone who wants to take part (WLED users, tool makers, controller and firmware authors). Expect
-> it to move and sharpen over time; ideas, corrections and contributions are welcome via an
-> [issue](https://github.com/openlamp/wled-midi/issues) or a PR.
+> anyone who wants to take part (WLED users, tool makers, controller and firmware authors).
+> **As a result, its structure is likely to change — and, early on, to change quickly** before it
+> settles. Expect it to move and sharpen over time; ideas, corrections and contributions are
+> welcome via an [issue](https://github.com/openlamp/wled-midi/issues) or a PR.
 
 ## Why a convention
 
