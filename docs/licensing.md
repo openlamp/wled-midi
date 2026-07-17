@@ -7,6 +7,12 @@
 > is approached **in that spirit, with no predetermined answer** — nothing on this page is a settled
 > position. It's an open reflection, meant to be weighed *together* and adjusted as the project and its
 > community grow. The goal, as everywhere in the project, is that **each finds its place**.
+>
+> **If any actor has an explicit need — a guarantee for a commercial or closed use case, patent
+> certainty, a specific licence, or anything else that would let you build on this with confidence —
+> please voice it.** Open an [issue](https://github.com/openlamp/wled-midi/issues) or reach the
+> maintainer ([@Beennnn](https://github.com/Beennnn)); it will be genuinely weighed in the decision.
+> Better to hear the need now, while the choice is still open, than after it's settled.
 
 > **Status: undecided, on purpose.** The code currently ships under [MIT](../LICENSE), and the
 > *specification* is covered by the royalty-free non-assertion policy in [SPEC §14](../SPEC.md).
