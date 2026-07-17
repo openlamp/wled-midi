@@ -55,6 +55,52 @@ the mapping can always centre on the played key and absorb the white/black offse
 strip + an opaque diffuser + a careful per-key mapping. That alignment is **genuinely good
 engineering**; the open route here matches it with a WLED-native strip and the mapping in firmware.
 
+## Producing a purpose-built strip (industrial or artisanal)
+
+The 144 LED/m + firmware-mapping route above is what an **artisanal / DIY** build uses — an
+off-the-shelf reel, a black diffuser channel, and the `keymap` calibration (measure the span, set
+`lpk` + `firstnote`). Cheap, reliable, no tooling. If you want to **manufacture** a dedicated strip,
+there are two levels:
+
+**A — uniform dense strip + firmware mapping (low tooling).** Ship a standard high-density reel
+(**144 LED/m**, ~176 LEDs for the 88-key span) in a black anodised channel with an opaque diffuser,
+and bake the note→LED map into the firmware. Off-the-shelf LEDs, **no custom PCB**; the non-uniform
+key layout is absorbed in software. This is how most aligned products actually reach their look, and
+it stays flexible (recalibrates to any keyboard size).
+
+**B — custom-pitch PCB (pixel-perfect 1:1, real tooling).** Design a flexible PCB that places the
+LEDs **at the measured key-centre positions** rather than at a uniform pitch — the only way to sit
+one diode exactly over each key centre with *no* software mapping. The geometry to encode:
+
+- 88 notes over **≈ 1225 mm**, A0 → C8, centres **not evenly spaced**: 52 white centres at ≈ 23.5 mm
+  pitch, plus 5 black centres per octave offset into the gaps (C♯/D♯ between C-D-E; F♯/G♯/A♯ between
+  F-G-A-B).
+- **1 LED per note at its centre** (88 LEDs) for a point-guide, or **2–3 LEDs per key footprint**
+  (~176–264 LEDs) for a lit-bar-per-key look — whites getting a wider LED group than blacks.
+- Keep the data protocol **WLED-native** (WS2812 / SK6812) so a stock ESP32 + WLED drives it: the
+  strip is bespoke, the brain and protocol stay open.
+
+Trade-off: **A** is cheap and universal (any keyboard, calibrate in software); **B** is perfect out
+of the box but costs PCB tooling and locks the geometry to one layout. For the standard 88-key
+weighted-piano market, **B** is worth it; for reach across keyboard sizes, **A** wins.
+
+### Prior art & patents (informational — not legal advice)
+
+The "light the key to play" idea has **decades of prior art**: illuminated-key guidance patents go
+back to the late 1990s — e.g. [US 6,037,534](https://patents.google.com/patent/US6037534),
+[US 6,008,783](https://patents.google.com/patent/US6008783) and
+[US 6,407,324](https://patents.google.com/patent/US6407324) (the last covers *two colours for
+left/right hand*) — most now past their 20-year term, plus a large body of open work
+([onlaj/Piano-LED-Visualizer](https://github.com/onlaj/Piano-LED-Visualizer) is GPL) and countless
+DIY builds. The general concept isn't something one could newly monopolise. **Live, specific patents
+do exist** on *particular* systems, though — e.g. [US 11,087,636](https://patents.google.com/patent/US11087636)
+(2021: an enclosure over the keys + per-key lights + laser sensors synced to lessons/games) and
+[US 9,652,994](https://patents.google.com/patent/US9652994) (LED bars in 1:1 key correspondence,
+MIDI-file-driven) — claiming specific mechanisms, not the generic dense-strip + note→LED mapping.
+**Takeaway:** the open density-plus-mapping approach on generic components rests on broad, long-standing
+prior art; but patents are jurisdictional and claim-specific, so **anyone selling a product should get
+a proper freedom-to-operate opinion from a patent attorney**. This note is informational only.
+
 ## Bill of materials (for two strips — one for the audience, one for the player)
 
 | Part | Example | ~Price |
