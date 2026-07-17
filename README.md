@@ -174,7 +174,12 @@ member of the family: one MIDI event → one WLED action, live, rather than a pr
 - *Windows* — [**loopMIDI**](https://www.tobias-erichsen.de/software/loopmidi.html) (Tobias Erichsen): create the virtual MIDI ports the convention routes through (monitor with ShowMIDI, generate/route with Bome). For MIDI over the network, [**rtpMIDI**](https://www.tobias-erichsen.de/software/rtpmidi.html) (same author — RTP-MIDI / AppleMIDI). The classic [**MIDI-OX**](http://www.midiox.com) monitors + routes MIDI.
 - *Linux* — virtual ports via the ALSA **`snd-virmidi`** kernel module (or JACK / PipeWire); **`aseqdump -l`** lists ports and **`aseqdump -p <port>`** monitors them; **[a2jmidid](https://github.com/jackaudio/a2jmidid)** bridges ALSA ↔ JACK for routing into DAWs (Bitwig, Reaper).
 
-**Platform**: [WLED](https://kno.wled.ge) itself — Aircoookie and the WLED community — which this convention merely speaks to over its public local API.
+**The two open standards this bridges** — wled-midi stands equally on both pillars, and owes each its thanks:
+
+- **MIDI** — the universal music-control standard stewarded by the [MIDI Association](https://midi.org). The Core is plain **MIDI 1.0**; the `mpe` and `strip` modes build directly on **MPE** (MIDI Polyphonic Expression — per-note pitch / pressure / slide), and the forward-compat profile follows **[MIDI 2.0](https://midi.org/midi-2-0)** (high-resolution control). Everything wled-midi *reads* is ordinary MIDI — nothing proprietary on the input side.
+- **WLED** — [WLED](https://kno.wled.ge) (Aircoookie and the WLED community), whose public local **JSON-state + realtime-UDP** API every mapping *resolves to* — nothing proprietary on the output side either.
+
+wled-midi is just the agreed **dictionary between these two open standards**: MIDI in, WLED out.
 
 ## License
 

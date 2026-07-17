@@ -18,6 +18,13 @@ The spec has two layers:
 
 Everything is normative in the Core; Extensions are advisory.
 
+**Two foundations.** This convention bridges **two open standards** and adds nothing proprietary of
+its own: **MIDI** on the input side — plain **MIDI 1.0**, with the `mpe`/`strip` modes building on
+**MPE** (MIDI Polyphonic Expression) and a forward-compat **[MIDI 2.0](https://midi.org/midi-2-0)**
+profile (§11), all stewarded by the [MIDI Association](https://midi.org) — and **WLED** on the output
+side, its public **JSON-state + realtime-UDP** API, which every Core mapping resolves to. wled-midi is
+just the agreed dictionary between the two.
+
 ### One unified syntax — every mode is a *configuration* of it
 
 There aren't three dialects — there is **one syntax**, and each "mode" is a **configuration**
