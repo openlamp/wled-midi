@@ -162,6 +162,7 @@ member of the family: one MIDI event → one WLED action, live, rather than a pr
 **Apps & products built on WLED** (finished tools you can just use):
 
 - [**LumiDeck**](https://github.com/openlamp/lumideck-support) — a **Stream Deck** app that drives your WLED lamps & strips locally from physical keys: colour, brightness, effects/palettes by name, scenes, and beat-sync (~45 ms/press). From the OpenLamp author, built on the [engine](https://github.com/openlamp/engine); WLED-first.
+- [**OpenLamp Beat**](https://github.com/openlamp/ha-addon-beat) — a **Home Assistant** add-on that flashes your WLED lamps **on the beat** of an Ableton Link / MIDI-clock session (runs the [engine](https://github.com/openlamp/engine) + beatsync, exposes `switch.beat_sync` via MQTT discovery). Install-from-URL, no Docker knowledge needed.
 
 **Kindred products** (the same instinct, done as closed hardware): DAW-driven recording lamps like the [Punchlight Recording Lamp USB RGB](https://www.thomannmusic.com/punchlight_recording_lamp_usb_rgb.htm) — which turns a light red / green straight from your DAW's record state — show the appetite for *DAW → light*. wled-midi is the open, WLED version of exactly that: a record-arm note/CC → a lamp goes red.
 
