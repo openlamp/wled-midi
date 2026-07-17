@@ -91,7 +91,7 @@ back to the late 1990s — e.g. [US 6,037,534](https://patents.google.com/patent
 [US 6,008,783](https://patents.google.com/patent/US6008783) and
 [US 6,407,324](https://patents.google.com/patent/US6407324) (the last covers *two colours for
 left/right hand*) — most now past their 20-year term, plus a large body of open work
-([onlaj/Piano-LED-Visualizer](https://github.com/onlaj/Piano-LED-Visualizer) is GPL) and countless
+([onlaj/Piano-LED-Visualizer](https://github.com/onlaj/Piano-LED-Visualizer) is MIT) and countless
 DIY builds. The general concept isn't something one could newly monopolise. **Live, specific patents
 do exist** on *particular* systems, though — e.g. [US 11,087,636](https://patents.google.com/patent/US11087636)
 (2021: an enclosure over the keys + per-key lights + laser sensors synced to lessons/games) and
