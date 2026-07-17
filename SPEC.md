@@ -417,3 +417,7 @@ shipping a commercial product should still obtain their own freedom-to-operate o
 
 Code is licensed [MIT](LICENSE); this policy governs the *specification and its ideas*. Together they
 keep the project's guiding line real — **advanced, integrated solutions usable by everyone**.
+
+> **Code licence is an open question.** Whether the code stays MIT or moves to Apache-2.0 (for an
+> explicit contributor patent grant) is **deliberately unsettled, pending WLED-community feedback** —
+> see [docs/licensing.md](docs/licensing.md). This §14 convention policy holds either way.

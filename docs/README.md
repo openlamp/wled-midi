@@ -23,6 +23,12 @@ the whole MIDI map in one page (a fast on-ramp for tool builders, e.g. Bome).
 - [Piano-aligned LED strip](hardware/piano-strip.md) — dense strip + note→LED mapping, the density insight, BOM, calibration, references.
 - [WLED lamp(s)](hardware/lamp.md) — the simplest rig (a pre-flashed WLED bulb).
 
+## Project
+
+- [Licensing](licensing.md) — an open question, deliberately not settled yet: code is MIT today, the
+  **MIT vs Apache-2.0** choice is on hold pending WLED-community feedback (the convention itself stays
+  free via [SPEC §14](../SPEC.md) regardless).
+
 ## Tooling & credits — in the [README](../README.md)
 
 - [Tooling to build & test](../README.md#credits--prior-art) — ShowMIDI (visualizer), MIDI Friend (generator), loopMIDI / rtpMIDI (Windows ports/network), Bome (adapter/router), IAC (macOS ports).
