@@ -1,0 +1,50 @@
+{
+  "_comment": "WLED-MIDI default map — canonical, machine-readable. Numbers remappable; the CC transforms and zone semantics in SPEC.md are the stable contract. Notes are organised in zones: look / util / modifier.",
+  "spec": "wled-midi",
+  "version": "0.3.0",
+  "profiles": {
+    "core": "MIDI 1.0, channel = group (this file's notes/cc). SPEC §1-10.",
+    "midi2": "forward-compat high-resolution mapping (16/32-bit CC -> WLED 8-bit). SPEC §11.",
+    "mpe": {
+      "_doc": "channel = per-note voice (mutually exclusive with core). SPEC §12.",
+      "master": 1, "members": "2-16",
+      "axes": { "pressure": "bri", "cc74": "sat", "pitch_bend": "hue", "note": "base_hue", "velocity": "bri" }
+    }
+  },
+  "channels": {
+    "1": { "device": "*", "seg": "all" }
+  },
+  "notes": {
+    "59": { "zone": "look", "name": "black",   "col": [0, 0, 0] },
+    "60": { "zone": "look", "name": "red",     "col": [255, 0, 0] },
+    "61": { "zone": "look", "name": "orange",  "col": [255, 85, 0] },
+    "62": { "zone": "look", "name": "yellow",  "col": [255, 200, 0] },
+    "63": { "zone": "look", "name": "green",   "col": [0, 255, 0] },
+    "64": { "zone": "look", "name": "cyan",    "col": [0, 200, 255] },
+    "65": { "zone": "look", "name": "blue",    "col": [0, 0, 255] },
+    "66": { "zone": "look", "name": "magenta", "col": [255, 0, 170] },
+    "67": { "zone": "look", "name": "white",   "col": [255, 255, 255] },
+    "68": { "zone": "look", "name": "effect",  "effect": true },
+    "48": { "zone": "util", "name": "off",      "on": false },
+    "50": { "zone": "util", "name": "on",       "on": true },
+    "52": { "zone": "util", "name": "toggle",   "on": "t" },
+    "53": { "zone": "util", "name": "blackout", "bri": 0 },
+    "55": { "zone": "util", "name": "restore",  "restore": "bri" },
+    "56": { "zone": "util", "name": "solid",    "fx": 0 },
+    "72": { "zone": "modifier", "name": "beat",  "beat": "toggle" },
+    "73": { "zone": "modifier", "name": "flash", "flash": true }
+  },
+  "cc": {
+    "1": "bri", "2": "cct", "3": "hue", "4": "sat",
+    "5": "fx", "6": "sx", "7": "ix", "8": "pal"
+  },
+  "program_change": { "target": "ps", "offset": 1 },
+  "velocity": { "to_bri": false },
+  "clock": { "ticks_per_beat": 24 },
+  "modes": {
+    "default": "lamp",
+    "lamp":  { "note": "look/action (the notes above)", "channel": "target" },
+    "strip": { "note": "position", "position": ["interpolate", "keymap"], "channel": "target or colour/hand" },
+    "mpe":   { "note": "voice", "channel": "voice" }
+  }
+}
