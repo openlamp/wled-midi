@@ -76,7 +76,7 @@ At a glance:
 | [openlamp/engine](https://github.com/openlamp/engine) | **reference implementation** — receives this convention, drives WLED + Tuya (`midi.py`) |
 | [openlamp/wled-midi-web](https://github.com/openlamp/wled-midi-web) | **browser reference impl** — a single HTML file: Web MIDI → WLED JSON (all 3 modes: `lamp` + `strip` + `mpe`), zero install (upload to the WLED filesystem) |
 | [openlamp/bome](https://github.com/openlamp/bome) | **Bome MIDI Translator pack** — map *any* hardware controller onto this convention, no code (generic template + capture) |
-| [openlamp/matrix](https://github.com/openlamp/matrix) | **multi-device canvas router** — compose N WLED into one surface from MIDI: `mirror` (HTTP broadcast) + `unified` (per-device slice via realtime DDP) |
+| [openlamp/matrix](https://github.com/openlamp/matrix) | **multi-device canvas router** — compose N WLED into one surface from MIDI: `mirror` (HTTP broadcast) + `unified` (per-device slice via realtime **DDP / Art-Net / E1.31**, incl. a 2-D serpentine canvas) |
 | [openlamp/live](https://github.com/openlamp/live) | Ableton Live frontend — *emits* this convention from a Live set |
 
 Building your own? Open a PR to add it here.
