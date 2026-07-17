@@ -47,7 +47,7 @@ improvements to stay open**.
 | [openlamp/matrix](https://github.com/openlamp/matrix) | multi-device router | **MIT** | |
 | [openlamp/bome](https://github.com/openlamp/bome) | Bome pack | **MIT** | |
 | [openlamp/live](https://github.com/openlamp/live) | Ableton frontend | **MIT** | |
-| [openlamp/midi](https://github.com/openlamp/midi) | tempo / Ableton Link | **MIT** | *uses Ableton Link (GPLv2+) — kept clean via a **process boundary** (see below); `openlamp-midi` PyPI also shows stale EUPL* |
+| [openlamp/midi](https://github.com/openlamp/midi) | tempo / Ableton Link | **MIT** | *own source MIT (Link team confirmed, Jul 2026); the optional `[link]` extra pulls **aalink GPLv3** + **Link GPLv2+**, so the distributed combination is GPLv3 and commercial bundling needs a commercial Link license — kept clean via a **process boundary** (see below)* |
 
 Everything of ours is **MIT today**. The one real drift to fix on the next publish: two PyPI packages
 still carry an **EUPL-1.2** licence field from before the repos were relicensed to MIT.
@@ -168,11 +168,13 @@ Different repos can carry **different licences** — and one may even *need* to:
   implement it. Copyleft here would defeat the purpose of a standard.
 - **Reference implementations** (engine, web, matrix, bome) can lean either way — permissive for reach,
   or copyleft/EUPL if we want forks to stay open. This is the real MIT-vs-Apache-2.0-vs-EUPL debate.
-- **[openlamp/midi](https://github.com/openlamp/midi)** touches **Ableton Link (GPLv2+)**. It stays MIT
-  by keeping a **process boundary** — Link runs as a separate process / the GPL binding isn't bundled
-  into our distributed code, so no derivative-work obligation flows in. If that ever changed (statically
-  linking Link into a shipped binary), *that* repo would have to go GPL while the others stayed as they
-  are. A concrete case where one project's licence diverges by necessity.
+- **[openlamp/midi](https://github.com/openlamp/midi)** touches **Ableton Link (GPLv2+)** via **aalink
+  (GPLv3)**. It stays MIT by keeping a **process boundary** — the beat-sync helper (`beatsync.py`) is the
+  only thing that ever combines with Link, and it reaches the engine only over local HTTP, so no
+  derivative-work obligation flows into the engine or the frontends. The Link team **confirmed this
+  boundary is sound** (July 2026): our own source stays MIT; the *distributed combination* of
+  beatsync + aalink complies with GPLv3; and **commercial / proprietary bundling needs a commercial
+  Ableton Link license**. A concrete case where one project's licence context diverges by necessity.
 
 So the likely shape: **permissive + §14 for the convention; a considered choice (MIT / Apache-2.0 /
 EUPL) for the reference impls; GPL only where a dependency forces it.** We'll settle it with the WLED
@@ -188,13 +190,21 @@ would restrict legitimate exploitation, **including commercial / closed** use. T
 - **The convention** ([wled-midi](https://github.com/openlamp/wled-midi)) → stays **permissive (MIT) +
   [§14](../SPEC.md)**. A *standard* must be implementable by **everyone, including fully closed
   products** — copyleft here would defeat its purpose.
-- **The reference implementations** (engine, web, matrix, bome, midi, live) → **MPL-2.0** (Mozilla
+- **The reference implementations** (engine, web, matrix, bome, live) → **MPL-2.0** (Mozilla
   Public License 2.0), the textbook *best of both worlds*:
   - **Weak / file-level copyleft** → improvements *to our files* stay open (the copyleft spirit, aligned
     with WLED's openness).
   - **Closed-friendly** → a company can embed or wrap the code in a **closed, commercial product**; only
     direct modifications to the MPL files come back. Nobody who needs a closed layer is shut out.
   - **Explicit patent grant + retaliation**, and **compatible with GPL / Apache / EUPL** if code mixes.
+- **[openlamp/midi](https://github.com/openlamp/midi) is the one exception → it stays MIT**, not MPL.
+  It's the only repo that ever combines with GPL code (Ableton Link via aalink), so the cleanest,
+  least-surprising setup is: **our source stays MIT**, and we simply document that the optional `[link]`
+  extra pulls in **aalink (GPLv3)** + **Ableton Link (GPLv2+)**, that the *distributed combination*
+  complies with **GPLv3**, and that **commercial / proprietary bundling additionally needs a commercial
+  Ableton Link license**. This boundary was **reviewed with the Ableton Link team (July 2026), who
+  confirmed the separation is sound and MIT-own-source is fine** — so there's no reason to move it to
+  MPL; MIT + clear notices is both simpler and expert-validated.
 - **Respect WLED's EUPL where WLED code is actually involved** — a contribution to WLED itself (a
   usermod) is EUPL, as required. But **we do not migrate our repos to EUPL**: we incorporate no WLED
   source (we speak over the network), so it isn't required, and MPL gives the same weak-copyleft benefit
