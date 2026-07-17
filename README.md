@@ -5,6 +5,10 @@
 > music. Notes → colours, CC → brightness/effects, Program Change → presets, MIDI
 > Clock (or a session clock) → on-the-beat. 100 % local.
 
+> Using [Bome MIDI Translator](https://www.bome.com/products/miditranslator)? →
+> **[Bome](https://github.com/openlamp/bome)** — a no-code starter pack (paste-in translators)
+> plus a WLED primer written from Bome's point of view.
+
 This repo is **just the specification** — no runtime, no dependencies. It exists so
 that multiple tools can speak the same MIDI↔WLED language instead of each inventing
 its own.
