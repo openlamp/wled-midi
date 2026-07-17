@@ -61,6 +61,50 @@ neighbours (**xLights, LedFx, Chataigne, ShowMIDI**) are mostly **GPL-3.0**; the
 **Apache-2.0**; the WLED-adjacent tools (**Hyperion.ng, onlaj**) are **MIT**. So the space spans the
 full range — permissive *and* copyleft coexist healthily.
 
+## Background — copyleft & the EUPL, in plain terms
+
+**Permissive vs copyleft** is the core axis of open-source licences:
+
+- **Permissive** (MIT, Apache-2.0): *"do almost anything, just keep the notice."* You can take the code,
+  modify it, and ship it inside a **closed, proprietary product** with no obligation to share your
+  changes back. Maximum freedom for whoever uses the code; no guarantee it stays open downstream.
+- **Copyleft** (GPL, LGPL, MPL, EUPL): *"same freedoms, but they must travel with the code."* You can
+  use and modify it freely, **but if you distribute it (or a derivative) it has to be under the
+  same/compatible open licence** — so improvements stay open. It uses copyright *to guarantee* the code
+  can't be re-closed. Also called **share-alike**.
+
+Copyleft comes in strengths:
+
+- **Strong copyleft** (GPL-3.0): the obligation covers the **whole program** that includes the code —
+  link GPL code into your app and the *whole app* must be GPL. Powerful, but it keeps the code out of
+  closed products entirely.
+- **Weak / file-level copyleft** (LGPL, MPL, **EUPL**): the obligation covers only the **library or the
+  modified files** — you can combine it with proprietary code *around* it, and only your changes *to it*
+  must stay open. A middle ground.
+- **Network copyleft** (AGPL): even offering it as a *network service* triggers the share-back
+  obligation — closes the "SaaS loophole" of modifying GPL code but never distributing a binary.
+
+**The EUPL (European Union Public Licence)** is a **weak / file-level copyleft** licence with a few
+unusual traits:
+
+- **Drafted by the European Commission** (v1.1 in 2007, v1.2 in 2017) and published, legally equivalent,
+  in **all official EU languages** — a rare, government-vetted open licence written for EU copyright law.
+- **A compatibility clause** — its standout feature: it *lists* other copyleft licences it can mix with
+  (GPLv2/v3, AGPL, MPL, LGPL, CeCILL, …). Combine EUPL code with, say, GPL code and distribute the
+  result, and you may relicense the whole under that compatible licence — dissolving the classic
+  "two copyleft licences won't mix" headache.
+- **An explicit patent grant**, and it covers *"distribution **or communication to the public**"* — so
+  it reaches network / hosted use more than a plain GPL does.
+
+**Why WLED uses it:** EUPL-1.2 keeps **WLED's own firmware improvements open** — you can't take WLED,
+close it, and ship it proprietary — while staying interoperable with the GPL world around it. A
+"keep the ecosystem open, but play well with others" choice.
+
+**Does it reach us?** No — copyleft travels only through *code*. Our engine speaks to WLED **over the
+network** (HTTP/UDP); it doesn't incorporate a line of WLED source, so no EUPL obligation flows into our
+repos. We're free to pick our own licence — WLED's choice is a *signal of community values*, not a
+constraint on us.
+
 ## License families at a glance
 
 | License | Type | Patent clause | Copyleft scope | In one line |
