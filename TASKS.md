@@ -36,8 +36,6 @@ convention or implementation work.
   [onlaj/Piano-LED-Visualizer](https://github.com/onlaj/Piano-LED-Visualizer) (prior art), so any
   dense strip becomes MIDI-compatible via the convention.
 - **Piano-guide demo** — a `strip`/`keymap` example that lights the key to play.
-- **Split-zone via Max for Live** — wire a Zone M4L device to emit zone bounds + colour into the
-  `zone` posfn.
 - **MIDI 2.0 profile** — ingest high-res CC once a MIDI-2.0 source is available (step-free fades).
 - **Bome pack** — verify the paste round-trip on a real Bome install; optional controller presets.
 - **Feedback: real state** — optionally reflect a device's actual state (external changes), not just
