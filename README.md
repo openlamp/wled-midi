@@ -120,9 +120,10 @@ this, or want a credit added/changed/removed? Open a PR or an issue.
 
 A whole family of projects and products *light the keys to teach you to play*. Some are polished
 learning tools with a real business model behind them — and staying viable can reasonably mean
-relying on a **proprietary or closed protocol**. That work is genuine and **we respect it**: making
-something people love and can sustain is hard, and a closed interface is a legitimate way to
-protect it.
+relying on a **proprietary or closed protocol**. That work is genuine and **we respect it**: several
+deliver beautifully **key-aligned strips on standard keyboards** (real engineering — see the
+[88-key spacing guide](docs/hardware/piano-strip.md)), and making something people love and can
+sustain is hard, so a closed interface is a legitimate way to protect it.
 
 - [onlaj/Piano-LED-Visualizer](https://github.com/onlaj/Piano-LED-Visualizer) — the reference open-source RPi + WS2812 piano visualiser (learning / Synthesia).
 - [serifpersia/pianolux-esp32](https://github.com/serifpersia/pianolux-esp32) & [pianolux-arduino](https://github.com/serifpersia/pianolux-arduino) — piano-LED from USB / BLE / WiFi MIDI on cheap ESP hardware.

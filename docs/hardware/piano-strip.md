@@ -23,6 +23,38 @@ This is how ~99% of DIY piano-LED builds work in 2026.
 Closed / pricey aligned systems exist (**Piano LED Plus**, **Symphone**); the open route above
 is cheaper and WLED-native.
 
+## LED spacing for a full-size 88-key piano (the market standard)
+
+Weighted-key (hammer-action / *toucher lourd*) digital pianos are, **with rare exceptions, 88 keys** —
+full-size keys, A0 → C8 (MIDI 21 → 108). Designing the strip for **88 full-size keys** therefore
+covers essentially the whole weighted-piano market; the odd 73/76-key stage piano is the exception,
+not the rule.
+
+The physical span to cover:
+
+| Measure | Value |
+|---|---|
+| Playing width (A0 → C8) | **≈ 1225 mm** (~48.2") |
+| White keys | 52 · white-key pitch ≈ **23.5 mm** (an octave of 7 whites ≈ 165 mm) |
+| Average note-to-note pitch | ≈ **13.75 mm** (12 semitones per 165 mm octave) |
+
+Keys are **not uniformly spaced** (whites are wide, blacks sit offset between them), so a uniform-pitch
+strip can't put exactly one diode on every key centre. The fix is **density**: pick ~2 LEDs per key so
+the mapping can always centre on the played key and absorb the white/black offset in software.
+
+| Strip density | LED pitch | LEDs over 1225 mm | LEDs / key | Verdict |
+|---|---|---|---|---|
+| **144 LED/m** | 6.9 mm | **≈ 176** | **≈ 2.0** | ✅ the de-facto piano choice — fine enough to align cleanly |
+| 96 LED/m | 10.4 mm | ≈ 118 | ≈ 1.35 | workable, coarser |
+| 72 LED/m | 13.9 mm | ≈ 88 | ≈ 1.0 | tempting (1 LED/note) but **no margin** — alignment drifts across the board, fragile |
+| 60 LED/m | 16.7 mm | ≈ 73 | < 1 | too coarse |
+
+→ **144 LED/m, ≈ 176 LEDs, LED 0 centred on A0** — i.e. `lpk ≈ 2.0`, `firstnote = 21` in the
+[calibration formula](#the-formula-what-keymap-uses). The **proprietary aligned systems**
+(Piano LED Plus, Symphone, i-Piano…) reach their clean, key-perfect look the same way — a dense
+strip + an opaque diffuser + a careful per-key mapping. That alignment is **genuinely good
+engineering**; the open route here matches it with a WLED-native strip and the mapping in firmware.
+
 ## Bill of materials (for two strips — one for the audience, one for the player)
 
 | Part | Example | ~Price |
