@@ -118,7 +118,18 @@ this, or want a credit added/changed/removed? Open a PR or an issue.
 - [onlaj/Piano-LED-Visualizer](https://github.com/onlaj/Piano-LED-Visualizer) — the reference Raspberry-Pi + WS2812 piano visualizer (learning / Synthesia).
 - [MusicalBasics — How To Make Your Own LED Piano](https://www.youtube.com/watch?v=B-lzFz1RM4E) — a full build that drives the LEDs from Ableton.
 - [Piano Led](https://www.facebook.com/pianoled/reels/) (Lille, FR) — a piano-LED visualiser shown in short video reels: the strip lights the notes as you play. Another take on the same *note → LED position* the `strip` mode targets.
+- [serifpersia/pianolux-esp32](https://github.com/serifpersia/pianolux-esp32) & [pianolux-arduino](https://github.com/serifpersia/pianolux-arduino) — an active piano-LED visualiser lighting a WS2812 strip from USB / BLE / WiFi MIDI (ESP32 + a Java host) — a close cousin of the `strip` piano-guide on cheap ESP hardware.
 - Synthesia LED guides and the various *Instructables* piano-LED tutorials.
+
+**Software that already drives WLED** (the neighbourhood wled-midi joins — these mostly stream
+*pixels* over WLED's realtime UDP: DDP / Art-Net / E1.31. wled-midi is the **MIDI-native, per-message**
+member of the family: one MIDI event → one WLED action, live, rather than a pre-rendered pixel feed):
+
+- [**xLights**](https://xlights.org) (Win/Mac/Linux) — the big open-source **LED sequencer** + show scheduler; drives WLED over DDP/Art-Net/E1.31. Timeline-authored shows, not live MIDI.
+- [**LedFx**](https://github.com/LedFx/LedFx) (Win/Mac/Linux) — **audio-reactive** LED visualiser → WLED via DDP/E1.31; its DDP sender is the reference the [matrix](https://github.com/openlamp/matrix) router's transport models.
+- [**QLC+**](https://www.qlcplus.org) (Win/Mac/Linux/RPi) — free **DMX / lighting control** that takes **MIDI in** and outputs Art-Net/E1.31 → WLED. The closest "MIDI → lights" cousin, but DMX-channel-oriented rather than a note/CC convention.
+- [**Chataigne**](https://github.com/benkuper/Chataigne) (Win/Mac/Linux) — Ben Kuper's modular **glue** (MIDI/OSC/DMX/Art-Net/sACN); a natural host to *implement* wled-midi as a bridge.
+- [**Hyperion.ng**](https://github.com/hyperion-project/hyperion.ng) (Win/Mac/Linux) — ambient/bias lighting → WLED. And WLED's own canonical list: [compatible software](https://kno.wled.ge/basics/compatible-software/).
 
 **Kindred products** (the same instinct, done as closed hardware): DAW-driven recording lamps like the [Punchlight Recording Lamp USB RGB](https://www.thomannmusic.com/punchlight_recording_lamp_usb_rgb.htm) — which turns a light red / green straight from your DAW's record state — show the appetite for *DAW → light*. wled-midi is the open, WLED version of exactly that: a record-arm note/CC → a lamp goes red.
 
@@ -132,9 +143,10 @@ this, or want a credit added/changed/removed? Open a PR or an issue.
 
 **Tooling to build & test an implementation:**
 
-- *Cross-platform* — [**ShowMIDI**](https://github.com/gbevin/ShowMIDI) (Geert Bevin): a free, open-source MIDI **visualizer** — the fastest way to *see* exactly which notes/CC are flowing.
+- *Cross-platform* — [**ShowMIDI**](https://github.com/gbevin/ShowMIDI) (Geert Bevin): a free, open-source MIDI **visualizer** — the fastest way to *see* exactly which notes/CC are flowing. Also [**Protokol**](https://hexler.net/protokol) (Hexler): a free MIDI/OSC/gamepad **monitor** (Win/Mac/Linux/iOS).
 - *macOS* — virtual MIDI ports via the built-in **IAC Driver** (Audio MIDI Setup, no install); [**MIDI Friend**](https://apps.apple.com/us/app/midi-friend/id497641137?mt=12) (Douglas Heriot): **generate** test notes/CC with no hardware controller.
-- *Windows* — [**loopMIDI**](https://www.tobias-erichsen.de/software/loopmidi.html) (Tobias Erichsen): create the virtual MIDI ports the convention routes through (monitor with ShowMIDI, generate/route with Bome). For MIDI over the network, [**rtpMIDI**](https://www.tobias-erichsen.de/software/rtpmidi.html) (same author — RTP-MIDI / AppleMIDI).
+- *Windows* — [**loopMIDI**](https://www.tobias-erichsen.de/software/loopmidi.html) (Tobias Erichsen): create the virtual MIDI ports the convention routes through (monitor with ShowMIDI, generate/route with Bome). For MIDI over the network, [**rtpMIDI**](https://www.tobias-erichsen.de/software/rtpmidi.html) (same author — RTP-MIDI / AppleMIDI). The classic [**MIDI-OX**](http://www.midiox.com) monitors + routes MIDI.
+- *Linux* — virtual ports via the ALSA **`snd-virmidi`** kernel module (or JACK / PipeWire); **`aseqdump -l`** lists ports and **`aseqdump -p <port>`** monitors them; **[a2jmidid](https://github.com/jackaudio/a2jmidid)** bridges ALSA ↔ JACK for routing into DAWs (Bitwig, Reaper).
 
 **Platform**: [WLED](https://kno.wled.ge) itself — Aircoookie and the WLED community — which this convention merely speaks to over its public local API.
 
